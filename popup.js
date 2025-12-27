@@ -1,15 +1,25 @@
+// Connecting to HTML elements
 const popup = document.getElementById("popup");
 const closeBtn = document.getElementById("closeBtn");
-
 const register = document.getElementById("registerBtn");
 const consentCheckbox = document.getElementById("consentCheckbox");
 const email = document.getElementById("emailInput");
+const tryButton = document.getElementById("tryButton");
 
+// Constants and Variables
 const FIRST_VISIT = "firstVisit";
 const SECOND_VISIT = "secondVisit";
-const TWO_HOURS = 2 * 60 * 60 * 1000;
+var TWO_HOURS = Number(localStorage.getItem("tryTime")) || 2 * 60 * 60 * 1000;
 
-// Fisrt visit Record
+
+// Try Button for testing
+tryButton.addEventListener("click", () => {
+  localStorage.clear();
+  localStorage.setItem("tryTime", 30 * 1000); // 30 seconds for testing
+  window.location.reload();
+});
+
+// First visit Record
 if (!localStorage.getItem(FIRST_VISIT)) {
   localStorage.setItem(FIRST_VISIT, Date.now());
   localStorage.setItem("click", 0);
@@ -36,18 +46,21 @@ function secondVisitCheck() {
   if (remaining <= 0) {
     popup.style.display = "flex";
     localStorage.setItem(SECOND_VISIT, Date.now());
+    localStorage.removeItem("tryTime");
   } else {
     setTimeout(() => {
       popup.style.display = "flex";
       localStorage.setItem(SECOND_VISIT, Date.now());
+      localStorage.removeItem("tryTime");
     }, remaining);
   }
 }
 
-// 4️⃣ Run the check
+// Run the check for second visit
 secondVisitCheck();
 
-// 5️⃣ Close Popup
+
+// Close Popup
 popup.addEventListener("click", (e) => {
   if (e.target === popup) popup.style.display = "none";
   localStorage.setItem("click", 1);
@@ -58,7 +71,8 @@ closeBtn.addEventListener("click", () => {
   localStorage.setItem("click", 1);
 });
 
-// 6️⃣ Register Email
+
+// Register Email
 register.addEventListener("click", () => {
   if (!consentCheckbox.checked) {
     alert("Lütfen KVKK Sözleşmesini kabul edin.");

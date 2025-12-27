@@ -48,7 +48,6 @@
 }
 .popup-subcribe button:hover {
   background-color: #ff4c56;
-
 }
 
 .email-input {
@@ -72,6 +71,40 @@
   position: absolute;
   top: 10px;
   right: 15px;
-  font-size: 20px;
+  font-size: 24px;
   cursor: pointer;
+}
+/* I prepared for testing */
+.testing-popup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 15px;
+  margin: 20px;
+  border: 2px dashed #e32026;
+  border-radius: 8px;
+  background-color: #ffe8ea;
+}
+.testing-popup h2 {
+  margin: 0 0 10px 0;
+  color: #b51c2d;
+}
+.testing-popup button {
+  background-color: #b51c2d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.testing-popup button:hover {
+  background-color: #8e141f;
+}
+.testing-popup p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
 }

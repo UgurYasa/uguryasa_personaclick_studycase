@@ -24,8 +24,11 @@
     <link rel="stylesheet" href="style.css" />
 
     <link rel="stylesheet" href="popup.css" />
+    <link rel="stylesheet" href="snow.css" />
   </head>
   <body>
+    <!-- Snowflakes -->
+    <div class="snow-layer"></div>
     <!-- Top Bar -->
     <div class="top-bar">
       <div class="top-bar-text" id="topBarText"></div>
@@ -72,10 +75,19 @@
     <!-- Announcement Bar -->
     <div class="announcement-bar">
       1500 TL ve Üzeri<span
-        style="font-weight: bold; color: #ff8196; margin-left: 5px"
+        style="font-weight: bolder; color: #ff8196; margin-left: 5px"
       >
         Kargo Ücretsiz!</span
       >
+    </div>
+    <!-- Testing Popup -->
+    <div class="testing-popup">
+      <h2>You can test the popup by clicking the button.</h2>
+      <button id="tryButton">Try Button</button>
+
+      <p>
+        Test configuration: first visit = 10 seconds, second visit = 30 seconds.
+      </p>
     </div>
     <!-- Popular Products Section -->
     <div class="grid-container" id="popularProducts"></div>
@@ -94,7 +106,10 @@
     <div class="popup" id="popup">
       <div class="popup-content">
         <span class="close-btn" id="closeBtn">&times;</span>
-        <img src="https://suwen.mncdn.com/mnresize/750/-/suwen/Products/ST4455613012_01.jpg" alt="PopupImage" />
+        <img
+          src="https://suwen.mncdn.com/mnresize/750/-/suwen/Products/ST4455613012_01.jpg"
+          alt="PopupImage"
+        />
         <div class="popup-subcribe">
           <h1>İlk Sen Haberdar Ol!</h1>
           <p>
@@ -103,7 +118,11 @@
           </p>
           <div class="email-input">
             <label for="emailInput">Email</label>
-            <input type="email" id="emailInput" placeholder="Email adresinizi girin" />
+            <input
+              type="email"
+              id="emailInput"
+              placeholder="Email adresinizi girin"
+            />
           </div>
           <div>
             <input type="checkbox" id="consentCheckbox" />
@@ -115,8 +134,10 @@
         </div>
       </div>
     </div>
+
     <!-- JavaScript -->
     <script src="script.js"></script>
     <script src="popup.js"></script>
+    <script src="snow.js"></script>
   </body>
 </html>

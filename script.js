@@ -5,15 +5,15 @@ const topMessages = [
   { id: 2, text: "🎅🏻 ☃️ 🎄" },
   { id: 3, text: "1500 TL Ve Üzeri Ücretsiz Kargo 🚚" },
 ];
-// DOM elemanı
+// DOM variable
 const textEl = document.getElementById("topBarText");
 
-// 20 karakterlik boşluk (non-breaking space)
+// 20 non-breaking spaces
 const gap = "\u00A0".repeat(20);
 
-// Metinleri ard arda birleştir
+// Text join with gaps
 let messageLine = topMessages.map((m) => m.text).join(gap);
-messageLine += gap; // Sonuna boşluk ekle
+messageLine += gap; // Add space at the end
 textEl.textContent = messageLine.repeat(100);
 
 // Navbar Sidebar
@@ -184,7 +184,6 @@ const yearEl = document.querySelector(".year");
 yearEl.textContent = new Date().getFullYear();
 
 // Footer Menu
-
 const footerMenu = [
   {
     id: 1,
@@ -258,7 +257,6 @@ const footerMenu = [
     ]
   }
 ];
-
 
 const footerMenuEl = document.getElementById("footerMenu");
 footerMenu.forEach((menu) => {
