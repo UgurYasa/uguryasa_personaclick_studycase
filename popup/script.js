@@ -128,42 +128,42 @@ const advantages = [
   {
     id: 1,
     name: "Ev Giyimde Net %60 %50 %40 İndirim",
-    image: "./public/pictures/Advantages1.png",
+    image: "../public/pictures/Advantages1.png",
   },
   {
     id: 2,
     name: "Sütyenlerde 3 Al 2 Öde",
-    image: "./public/pictures/Advantages2.png",
+    image: "../public/pictures/Advantages2.png",
   },
     {
     id: 3,
     name: "Külotlarda Tüm İndirimlere Ek Net %20 İndirim",
-    image: "./public/pictures/Advantages4.png",
+    image: "../public/pictures/Advantages4.png",
   },
   {
     id: 4,
     name: "Koleksiyonlarda Net %70 İndirim",
-    image: "./public/pictures/Advantages3.png",
+    image: "../public/pictures/Advantages3.png",
   },
    {
     id: 5,
     name: "",
-    image: "./public/pictures/Advantages5.png",
+    image: "../public/pictures/Advantages5.png",
   },
   {
     id: 6,
     name: "Erkek Ev Giyimde Net %60 %50 %40 İndirim",
-    image: "./public/pictures/Advantages6.png",
+    image: "../public/pictures/Advantages6.png",
   },
     {
     id: 7,
     name: "Çoraplarda 3 Al 2 Öde",
-    image: "./public/pictures/Advantages7.png",
+    image: "../public/pictures/Advantages7.png",
   },
    {
     id: 8,
     name: "Hamile ve Lohusa Ürünlerinde Net %60 %50 %40 İndirim",
-    image: "./public/pictures/Advantages8.png",
+    image: "../public/pictures/Advantages8.png",
   },
 
 ];
