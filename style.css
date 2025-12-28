@@ -68,7 +68,13 @@ footer {
     transform: translateX(-100%);
   }
 }
-
+/* Header Icons Styles */
+.header-icons {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  align-items: center;
+  gap: 16px;
+}
 /* Sidebar Styles */
 .sidebar {
   display: flex;
@@ -171,6 +177,9 @@ footer {
   .announcement-bar {
     font-size: 14px;
     padding: 6px 0;
+  }
+  .header-icons {
+    grid-template-columns: repeat(4, auto);
   }
   .sidebar {
     display: none;

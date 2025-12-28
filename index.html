@@ -83,7 +83,7 @@
     <!-- Testing Popup -->
     <div class="testing-popup">
       <h2>You can test the popup by clicking the button.</h2>
-      <button id="tryButton">Try Button</button>
+      <button id="testButton">Test Button</button>
 
       <p>
         Test configuration: first visit = 10 seconds, second visit = 30 seconds.
@@ -104,7 +104,8 @@
     </footer>
     <!-- Popup -->
     <div class="popup" id="popup">
-      <div class="popup-content">
+      <!-- Normal Popup -->
+      <div class="normal-popup" id="normalPopup">
         <span class="close-btn" id="closeBtn">&times;</span>
         <img
           src="https://suwen.mncdn.com/mnresize/750/-/suwen/Products/ST4455613012_01.jpg"
@@ -132,6 +133,15 @@
           </div>
           <button class="registerBtn" id="registerBtn">Kayıt Ol</button>
         </div>
+      </div>
+      <!-- Discount Popup -->
+      <div class="discount-popup" id="discountPopup">
+        <span class="close-btn" id="closeBtn2">&times;</span>
+        <i class="fa-solid fa-check check"></i>
+        <h1>Aramıza hoş geldin!</h1>
+        <p>Sana özel '3 al 2 öde' fırsatı kazandın!</p>
+        <h2>3AL2ODE</h2>
+        <button id="copyButton">Kopyala</button>
       </div>
     </div>
 

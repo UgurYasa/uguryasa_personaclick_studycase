@@ -40,18 +40,18 @@ sidebar.forEach((item) => {
 const headerIcons = [
   {
     id: 1,
-    class: "fa-solid fa-magnifying-glass",
+    class: "fa-solid fa-magnifying-glass header-icon",
     onClick: () => alert("Search clicked"),
   },
   {
     id: 2,
     class: "fa-solid fa-heart",
-    onClick: () => alert("Favorites clicked"),
+    onClick: () => alert("Favorites clicked header-icon"),
   },
-  { id: 3, class: "fa-regular fa-user", onClick: () => alert("User clicked") },
+  { id: 3, class: "fa-regular fa-user header-icon", onClick: () => alert("User clicked") },
   {
     id: 4,
-    class: "fa-solid fa-bag-shopping",
+    class: "fa-solid fa-bag-shopping header-icon",
     onClick: () => alert("Shopping Bag clicked"),
   },
 ];

@@ -4,16 +4,19 @@ const closeBtn = document.getElementById("closeBtn");
 const register = document.getElementById("registerBtn");
 const consentCheckbox = document.getElementById("consentCheckbox");
 const email = document.getElementById("emailInput");
-const tryButton = document.getElementById("tryButton");
+const testButton = document.getElementById("testButton");
+const discountPopup = document.getElementById("discountPopup");
+const normalPopup = document.getElementById("normalPopup");
+const closeBtn2 = document.getElementById("closeBtn2");
+const copyButton = document.getElementById("copyButton");
 
 // Constants and Variables
 const FIRST_VISIT = "firstVisit";
 const SECOND_VISIT = "secondVisit";
 var TWO_HOURS = Number(localStorage.getItem("tryTime")) || 2 * 60 * 60 * 1000;
 
-
 // Try Button for testing
-tryButton.addEventListener("click", () => {
+testButton.addEventListener("click", () => {
   localStorage.clear();
   localStorage.setItem("tryTime", 30 * 1000); // 30 seconds for testing
   window.location.reload();
@@ -30,6 +33,7 @@ window.addEventListener("load", () => {
   if (localStorage.getItem("click") == 0) {
     setTimeout(() => {
       popup.style.display = "flex";
+      normalPopup.style.display = "flex";
     }, 10000);
   }
 });
@@ -45,11 +49,22 @@ function secondVisitCheck() {
 
   if (remaining <= 0) {
     popup.style.display = "flex";
+    if (localStorage.getItem("email")) {
+      discountPopup.style.display = "flex";
+    } else {
+      normalPopup.style.display = "flex";
+    }
+
     localStorage.setItem(SECOND_VISIT, Date.now());
     localStorage.removeItem("tryTime");
   } else {
     setTimeout(() => {
       popup.style.display = "flex";
+      if (localStorage.getItem("email")) {
+        discountPopup.style.display = "flex";
+      } else {
+        normalPopup.style.display = "flex";
+      }
       localStorage.setItem(SECOND_VISIT, Date.now());
       localStorage.removeItem("tryTime");
     }, remaining);
@@ -59,7 +74,6 @@ function secondVisitCheck() {
 // Run the check for second visit
 secondVisitCheck();
 
-
 // Close Popup
 popup.addEventListener("click", (e) => {
   if (e.target === popup) popup.style.display = "none";
@@ -68,9 +82,15 @@ popup.addEventListener("click", (e) => {
 
 closeBtn.addEventListener("click", () => {
   popup.style.display = "none";
+  discountPopup.style.display = "none";
   localStorage.setItem("click", 1);
 });
 
+closeBtn2.addEventListener("click", () => {
+  popup.style.display = "none";
+  discountPopup.style.display = "none";
+  localStorage.setItem("click", 1);
+});
 
 // Register Email
 register.addEventListener("click", () => {
@@ -81,8 +101,21 @@ register.addEventListener("click", () => {
     alert("Lütfen geçerli bir e-posta adresi girin.");
     return;
   } else {
-    alert(`Teşekkürler! ${email.value} adresi kayıt edildi.`);
-    popup.style.display = "none";
-    localStorage.setItem("click", 1);
+    localStorage.setItem("email", email.value);
+    normalPopup.style.display = "none";
+    discountPopup.style.display = "flex";
   }
+});
+
+// Copy Discount Code
+copyButton.addEventListener("click", () => {
+  const discountCode = "3AL2ODE";
+  navigator.clipboard.writeText(discountCode);
+  
+  copyButton.textContent = "Kopyalandı!";
+  copyButton.style.backgroundColor = "#22C55E";
+  setTimeout(() => {
+    copyButton.textContent = "Kopyala";
+    copyButton.style.backgroundColor = "#ff808b";
+  }, 2000);
 });
