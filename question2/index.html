@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Study Case - Question 2</title>
+  </head>
+  <body
+    style="
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+    "
+  >
+    <div>
+      <p id="textElement">This is a text for basic example</p>
+      <button id="basicChangeButton">Change Text</button>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 20px">
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <h1>innerText :</h1>
+        <p id="textElement1">This text is changed using innerText.</p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <h1>innerHTML:</h1>
+        <p id="textElement2">This text is bold using innerHTML.</p>
+      </div>
+      <button id="changeTextsButton">Change Texts</button>
+    </div>
+    <script src="text.js"></script>
+  </body>
+</html>
