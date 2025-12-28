@@ -18,7 +18,7 @@ var TWO_HOURS = Number(localStorage.getItem("tryTime")) || 2 * 60 * 60 * 1000;
 // Try Button for testing
 testButton.addEventListener("click", () => {
   localStorage.clear();
-  localStorage.setItem("tryTime", 30 * 1000); // 30 seconds for testing
+  localStorage.setItem("tryTime", 60 * 1000); // 60 seconds for testing
   window.location.reload();
 });
 
